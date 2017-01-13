@@ -13,7 +13,6 @@ def solution(A):
     ends   = map(lambda x: (x[0]+x[1], 2), enum) # O(n)
 
     discs = sorted(starts+ends, key=lambda x:x[0]) # n*log(n)
-    end = discs[0][0]
 
     # 0..(n-1); O(n)
     for i in range(1, n*2):
@@ -24,7 +23,7 @@ def solution(A):
         else: # end?
             open_intervals -= 1
             if open_intervals > 0:
-                intersections += (open_intervals)
+                intersections += open_intervals
             
 
     # special check
